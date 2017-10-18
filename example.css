@@ -1,7 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Oswald:400,300,700|Alegreya:400,700,400italic,700italic);
 
-* {
+/* apply a natural box layout model to all elements, but allowing components to change */
+/* see https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
   box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
@@ -9,7 +14,7 @@ body {
   padding: 0;
   line-height: 1.7;
   font-family: "Alegreya";
-  font-size: 18px;
+  font-size: 20px;
 }
 
 header#main-header {
@@ -22,6 +27,10 @@ header#main-header {
 }
 
 header#main-header::before {
+  /* the "::before" pseudoselector above creates a virtual element
+     (as long as you add the "content" property below.)
+     it's pretty cool!
+  */
   background: white;
   content: "";
   opacity: 0.9;
@@ -53,7 +62,7 @@ h1,h2,h3,h4,h5,h6 {
 
 
 article.bio {
-  padding: 100px; 
+  padding: 100px;
 }
 
 article.bio::after {
@@ -112,7 +121,7 @@ div#container {
 aside.sidebar {
   width: 25%;
   float: left;
-  padding: 100px 80px;
+  padding: 50px;
   font-size: 20px;
 }
 
@@ -158,6 +167,7 @@ div#container > footer {
   background: black;
   color: white;
   padding: 20px;
+  font-size: 16px;
 }
 
 header img {
